@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Interships</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-text">
+                <p>Python Full-Stack Developer | AI-ML Enthusiast</p>
+                <h1>Hi, I'm <span>Benedict Maria</span><br>From India</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----------About----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src="images/photo3.jpeg" alt="about_image">
+                </div>
+                <div class="about-col2">
+                    <h1 class="about-head">About Me</h1>
+                    <p class="about-text">Final-year student skilled in Python Full-Stack Development and Data Science, with experience building 
+                                        end-to-end web applications using HTML, CSS, JavaScript, Python,FastAPI, and MySQL, along with data science, 
+                                        machine learning, and visualization to drive data-informed solutions.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Scripting, Automation, Backend development</li><br>
+                            <li><span>SQL</span><br>Database queries & Management</li><br>
+                            <li><span>HTML, CSS, JavaScript</span><br>Designing Web Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>Scalable Task Management System</span><br>Task Management System secure features like user signup/login, JWT authentication, task CRUD with priority & due dates, dashboard with task completion, and user profiles. CORS-enabled API.</li>
+                            <li><span>PCB Quality Inspection System </span><br>Automated PCB (Printed Circuit Board) defect detection system using YOLOv8, a state-of-the-art object detection model.</li>
+                            <li><span>AI-Based Online Exam Proctoring System</span><br>Online exam proctoring system that uses computer vision to monitor candidates in real time, detect suspicious activities and generate automated reports.</li>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>BE - Computer Science and Engineering</span><br>Anna University Regional Campus, Tirunelveli.<br>CGPA : 8.33</li>
+                            <li><span>12<sup>th</sup> Grade</span><br>SKSBV Matriculation Higher Secondary School, Kommadikottai.<br>Percentage: 90.50%</li>
+                            <li><span>10<sup>th</sup> Grade</span><br>SKSBV Matriculation Higher Secondary School, Kommadikottai.<br>Percentage: 96.20%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------Internships------------------- -->
+     <div id="interships">
+        <div class="container">
+            <div class="about-intern">Internships</div>
+            <div class="intern-list">
+                <div>
+                    <h2>AI-ML Intern</h2>
+                    <p>Completed a one-month internship at TANSAM powered by Siemens in AI & ML, gaining hands-on project experience, applying machine learning techniques, and enhancing technical and problem-solving skills.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <h2>Machine Learning Intern</h2>
+                    <p>Completed a 1-month virtual internship in Machine Learning at SYNTECXHUB, working on real-world projects like house price prediction, iris classification, fraud detection, and recommendation systems, gaining skills in Python, data analysis, ML modeling, and problem-solving.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <h2>Python Full-Stack Intern</h2>
+                    <p>Ongoing a 3-month internship in Python Full-Stack Development at Besant Technologies, working on real-world projects and gaining skills in FastAPI, React, and database management.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <script>
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+       
+    </script>
+
+</body>
+</html>
