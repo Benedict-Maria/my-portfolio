@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 *{
     margin : 0;
     padding : 0;
@@ -132,7 +135,7 @@ nav ul li a:hover::after{
 }
 
 /* -------------------Internships------------------ */
-#interships{
+#internships{
     padding: 50px 0;
 }
 .about-intern{
@@ -154,10 +157,6 @@ nav ul li a:hover::after{
     font-weight: 300;
     transition: background 0.5s, transform 0.5s;
 }
-/* .intern-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
-} */
 .intern-list div h2{
     font-size: 30px;
     font-weight: 500;
@@ -178,4 +177,260 @@ nav ul li a:hover::after{
 }
 .intern-list div a:hover{
     color:#080808;
+}
+
+/* -----------------Projects------------------ */
+#project{
+    padding: 50px 0;
+}
+.about-project{
+    font-size: 53px;
+    font-weight: 600;
+    color:crimson;
+}
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+.project {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  /* height: 400px; */
+  min-height: 250px;
+}
+.project img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;   
+    font-size: 14px;
+    transition: height 0.5s;
+    pointer-events: none;
+}
+.layer h3{
+    font-weight: 800;
+    margin-top: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 50px;
+    background: #fff;
+    width: 45px;
+    height:45px;
+    border-radius: 50px;
+    text-align: center;
+}
+.project:hover img{
+    transform: scale(1.1);
+}
+.project:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 10px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: background;
+}
+.btn:hover{
+    background: #ff004f;
+    color: #fff;
+}
+
+/* ----------------Contact------------------ */
+.about-contact{
+    font-size: 53px;
+    font-weight: 600;
+    color:crimson;
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-left p{
+    margin-top: 30px;
+    color: #b9f6f1;
+    font-size: 20px;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.btn.btn3{
+    display: inline-block;
+    background: #ff004f;
+    cursor: pointer;
+    padding: 14px 60px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 400;
+    margin-top: 20px;
+}
+.copyright p i{
+    color: #ff004f
+}
+
+/* ---------------CSS for small screens-------------------- */
+nav .fa-solid{
+    display:none;
+}
+@media only screen and (max-width: 600px) {
+    #header{
+        background-image: url(images/photo6.jpeg);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 15px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display:block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display:block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+    .about-head, .about-intern, .about-project, .about-contact{
+        font-size: 40px;
+    }
+    .about-col1, .about-col2{
+        flex-basis: 100%;
+    }
+    .about-col1{
+        margin-bottom: 30px;
+    }
+    .about-col2{
+        font-size: 15px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .tab-contents{
+        font-size: 18px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+    .project {
+        cursor: pointer;
+    }
+    .project-list,.intern-list {
+        grid-template-columns: 1fr;
+    }
+    .intern-list div {
+        padding: 20px;
+    }
+    .intern-list div p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .layer {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+    .project.active-project .layer{
+        height: 100%;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .layer h3 {
+        font-size: 16px;
+    }
+    .active-project .layer {
+        height: 100%;
+    }
+    .project:hover .layer {
+        height: 100%;
+        opacity: 1;
+    }
 }
