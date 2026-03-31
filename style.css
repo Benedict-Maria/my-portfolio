@@ -225,7 +225,7 @@ nav ul li a:hover::after{
     padding: 0 40px;
     text-align: center;   
     font-size: 14px;
-    transition: height 0.5s;
+    transition: height 0.5s, opacity 0.3s;
     pointer-events: none;
 }
 .layer h3{
@@ -249,6 +249,7 @@ nav ul li a:hover::after{
 }
 .project:hover .layer{
     height: 100%;
+    opacity: 1;
 }
 .btn{
     display: block;
@@ -315,6 +316,9 @@ form input, form textarea{
 .btn.btn2{
     display: inline-block;
     background: #ff004f;
+}
+.btn + .btn {
+    margin-top: 15px;
 }
 .btn.btn3{
     display: inline-block;
@@ -425,9 +429,6 @@ nav .fa-solid{
     }
     .layer h3 {
         font-size: 16px;
-    }
-    .active-project .layer {
-        height: 100%;
     }
     .project:hover .layer {
         height: 100%;
