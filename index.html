@@ -44,15 +44,16 @@
                     <h1 class="about-head">About Me</h1>
                     <p class="about-text">Final-year student skilled in Python Full-Stack Development and Data Science,
                         with experience building
-                        end-to-end web applications using HTML, CSS, JavaScript, React, Python, FastAPI, and MySQL, along with
+                        end-to-end web applications using HTML, CSS, JavaScript, React, Python, FastAPI, and MySQL,
+                        along with
                         data science,
                         machine learning, and visualization to drive data-informed solutions.
                     </p>
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('Certifications')">Certifications</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+                        <p class="tab-links" onclick="opentab('Certifications', event)">Certifications</p>
+                        <p class="tab-links" onclick="opentab('education', event)">Education</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
@@ -61,7 +62,8 @@
                             <li><span><i class="fa-solid fa-database"></i> SQL</span><br>Database queries & Management
                             </li><br>
                             <li><span><i class="fa-brands fa-html5"></i>HTML, <i class="fa-brands fa-css3-alt"></i>CSS,
-                                    <i class="fa-brands fa-js"></i>JavaScript,<i class="fa-brands fa-react"></i>React</span><br>Designing Web Interfaces</li>
+                                    <i class="fa-brands fa-js"></i>JavaScript,<i
+                                        class="fa-brands fa-react"></i>React</span><br>Designing Web Interfaces</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="Certifications">
@@ -160,6 +162,25 @@
         </div>
     </div>
 
+    <!-- -----------GitHub Activity----------- -->
+    <div id="github">
+        <div class="container">
+            <h1 class="about-project">GitHub Activity</h1>
+
+            <div class="github-section">
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Benedict-Maria&theme=tokyonight" 
+                    alt="GitHub Profile Summary">
+                <img src="https://streak-stats.demolab.com/?user=Benedict-Maria&theme=radical" alt="GitHub Streak"
+                    alt="GitHub Streak">
+            </div>
+
+            <!-- Contribution Graph -->
+            <div class="github-graph">
+                <img src="https://ghchart.rshah.org/Benedict-Maria" alt="GitHub Contribution Graph">
+            </div>
+        </div>
+    </div>
+
     <!-- ------------Contact---------------- -->
     <div id="contact">
         <div class="container">
@@ -177,8 +198,8 @@
                                 class="fa-solid fa-envelope"></i></a>
                         <a href="https://t.me/Benedict_Maria" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                     </div>
-                    <a href="images/BENEDICT_MARIA_L_Python_FullStack_resume.pdf" download class="btn btn2">Download CV</a>
-                    <a href="images/BENEDICT_MARIA_L_Python_FullStack_resume.pdf" target="_blank" class="btn btn2">View Resume</a>
+                    <a href="images/Benedict_Maria_L_11am_Resume.pdf" download class="btn btn2">Download CV</a>
+                    <a href="images/Benedict_Maria_L_11am_Resume.pdf" target="_blank" class="btn btn2">View Resume</a>
                 </div>
                 <div class="contact-right">
                     <form action="https://formspree.io/f/xojpwlgp" method="POST" id="contact-form">
@@ -200,11 +221,11 @@
         let tablinks = document.getElementsByClassName("tab-links");
         let tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
+        function opentab(tabname, event) {
+            for (let tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
-            for (tabcontent of tabcontents) {
+            for (let tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
             event.currentTarget.classList.add("active-link");
@@ -238,7 +259,7 @@
         const form = document.getElementById("contact-form");
         const status = document.getElementById("form-status");
         form.addEventListener("submit", async function (e) {
-            e.preventDefault(); 
+            e.preventDefault();
             const data = new FormData(form);
             const response = await fetch(form.action, {
                 method: "POST",
@@ -258,4 +279,5 @@
     </script>
 
 </body>
+
 </html>
