@@ -14,7 +14,7 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" class="logo">
+                <img src="images/logo.png" class="logo" alt="Benedict Maria Logo">
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -25,7 +25,7 @@
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-                <i class="fa-solid fa-moon" id="theme-toggle"></i>
+                <i class="fa-solid fa-sun" id="theme-toggle"></i>
             </nav>
 
             <div class="header-text">
@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col1">
-                    <img src="images/photo3.jpeg" alt="about_image">
+                    <img src="images/photo3.jpeg" alt="Benedict Maria Profile Photo">
                 </div>
                 <div class="about-col2">
                     <h1 class="about-head">About Me</h1>
@@ -167,13 +167,12 @@
     <!-- -----------GitHub Activity----------- -->
     <div id="github">
         <div class="container">
-            <h1 class="about-project">GitHub Activity</h1>
+            <h1 class="about-github">GitHub Activity</h1>
 
             <div class="github-section">
                 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Benedict-Maria&theme=tokyonight"
                     alt="GitHub Profile Summary">
-                <img src="https://streak-stats.demolab.com/?user=Benedict-Maria&theme=radical" alt="GitHub Streak"
-                    alt="GitHub Streak">
+                <img src="https://streak-stats.demolab.com/?user=Benedict-Maria&theme=radical" alt="GitHub Streak">
             </div>
 
             <!-- Contribution Graph -->
@@ -276,6 +275,33 @@
                 form.reset();
             } else {
                 status.innerHTML = "Something went wrong. Try again.";
+            }
+        });
+    </script>
+
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+
+        // Load saved theme
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "light") {
+                document.body.classList.add("light-mode");
+                themeToggle.classList.replace("fa-sun", "fa-moon");
+            }
+        });
+
+        // Toggle theme
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                themeToggle.classList.replace("fa-sun", "fa-moon");
+                localStorage.setItem("theme", "light");
+            } else {
+                themeToggle.classList.replace("fa-moon", "fa-sun");
+                localStorage.setItem("theme", "dark");
             }
         });
     </script>
