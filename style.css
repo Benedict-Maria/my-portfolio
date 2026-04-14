@@ -78,7 +78,11 @@ nav ul li a:hover::after {
     color: #ff004f;
 }
 
-.about-head,.about-project,.about-github,.about-intern,.about-contact {
+.about-head,
+.about-project,
+.about-github,
+.about-intern,
+.about-contact {
     font-size: 53px;
     font-weight: 600;
     color: crimson;
@@ -264,7 +268,7 @@ nav ul li a:hover::after {
 
 .layer a {
     margin-top: 20px;
-    color: #ff004f;
+    color: #000000;
     text-decoration: none;
     font-size: 15px;
     line-height: 50px;
@@ -548,9 +552,11 @@ nav .fa-xmark {
     background: #ffffff;
     color: #000;
 }
+
 .light-mode #header {
     background-image: url(images/photo1.jpeg);
 }
+
 .light-mode #about,
 .light-mode #internships,
 .light-mode #project,
@@ -558,16 +564,19 @@ nav .fa-xmark {
 .light-mode #contact {
     background: #ffffff;
 }
-.light-mode body,.light-mode p,.light-mode li {
+
+.light-mode body,
+.light-mode p,
+.light-mode li {
     color: #000;
 }
 
 .tab-contents ul li span {
-    color: #f979a2; 
+    color: #f979a2;
 }
 
 .header-text h1 span {
-    color: #ff004f; 
+    color: #ff004f;
 }
 
 .light-mode h1,
@@ -622,9 +631,11 @@ nav .fa-xmark {
 .light-mode .about-contact {
     color: crimson;
 }
+
 .light-mode .intern-list div a {
     color: black;
 }
+
 .intern-list div:hover {
     transform: translateY(-10px);
 }
@@ -637,9 +648,23 @@ nav .fa-xmark {
 }
 
 .light-mode .intern-list div:hover p,
-.light-mode .intern-list div:hover h2{
+.light-mode .intern-list div:hover h2 {
     color: white;
 }
+
 .light-mode .intern-list div a:hover {
     color: #ffffff;
 }
+
+.light-mode .project .layer,
+.light-mode .project .layer h3,
+.light-mode .project .layer p {
+    color: #ffffff !important;
+}
+.light-mode .project .layer a {
+    color: white;
+    background: #000000;
+}
+/* .light-mode .layer {
+    background: linear-gradient(rgba(67, 59, 59, 0.7), #ff004f);
+} */
