@@ -105,20 +105,20 @@
                     <p>Completed a one-month internship at TANSAM powered by Siemens in AI & ML, gaining hands-on
                         project experience, applying machine learning techniques, and enhancing technical and
                         problem-solving skills.</p>
-                    <a href="#">Learn more</a>
+                    <a href="#" onclick="openModal('ai-ml')">Learn more</a>
                 </div>
                 <div>
                     <h2>Machine Learning Intern</h2>
                     <p>Completed a 1-month virtual internship in Machine Learning at SYNTECXHUB, working on real-world
                         projects like house price prediction, iris classification, fraud detection, and recommendation
                         systems, gaining skills in Python, data analysis, ML modeling, and problem-solving.</p>
-                    <a href="#">Learn more</a>
+                    <a href="#" onclick="openModal('ml')">Learn more</a>
                 </div>
                 <div>
                     <h2>Python Full-Stack Intern</h2>
                     <p>Ongoing a 3-month internship in Python Full-Stack Development at Besant Technologies, working on
                         real-world projects and gaining skills in FastAPI, React, and database management.</p>
-                    <a href="#">Learn more</a>
+                    <a href="#" onclick="openModal('fullstack')">Learn more</a>
                 </div>
             </div>
         </div>
@@ -170,8 +170,10 @@
             <h1 class="about-github">GitHub Activity</h1>
 
             <div class="github-section">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Benedict-Maria&theme=tokyonight&cache=1" alt="GitHub Summary Cards">
-                <img src="https://streak-stats.demolab.com/?user=Benedict-Maria&theme=radical&cache=1" alt="GitHub Streak">
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Benedict-Maria&theme=tokyonight&cache=1"
+                    alt="GitHub Summary Cards">
+                <img src="https://streak-stats.demolab.com/?user=Benedict-Maria&theme=radical&cache=1"
+                    alt="GitHub Streak">
             </div>
 
             <!-- Contribution Graph -->
@@ -214,6 +216,25 @@
         </div>
         <div class="copyright">
             <p>© 2026 Benedict Maria | Built with <i class="fa-solid fa-heart"></i> using HTML, CSS & JavaScript</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <div class="modal-body">
+                <!-- LEFT: Certificate -->
+                <div class="modal-left">
+                    <img id="modal-cert" src="" alt="Certificate">
+                </div>
+
+                <!-- RIGHT: Details -->
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-details"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -303,6 +324,34 @@
                 localStorage.setItem("theme", "dark");
             }
         });
+    </script>
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById("modal");
+            const title = document.getElementById("modal-title");
+            const cert = document.getElementById("modal-cert");
+            const details = document.getElementById("modal-details");
+
+            if (type === "ai-ml") {
+                title.innerText = "AI-ML Internship";
+                cert.src = "images/ai_ml_certificate.jpg";
+                details.innerHTML = `
+            <p><strong>What I Did:</strong></p>
+            <ul>
+                <li>Built ML models for classification</li>
+                <li>Performed data preprocessing</li>
+                <li>Improved accuracy through tuning</li>
+            </ul>
+            <p><strong>Tech Stack:</strong> Python, Pandas, Scikit-learn</p>
+        `;
+            }
+
+            modal.style.display = "flex";  // ✅ IMPORTANT
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
     </script>
 
 </body>
