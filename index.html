@@ -105,20 +105,20 @@
                     <p>Completed a one-month internship at TANSAM powered by Siemens in AI & ML, gaining hands-on
                         project experience, applying machine learning techniques, and enhancing technical and
                         problem-solving skills.</p>
-                    <a href="#" onclick="openModal('ai-ml')">Learn more</a>
+                    <a href="#" onclick="event.preventDefault(); openModal('ai-ml')">Learn more</a>
                 </div>
                 <div>
                     <h2>Machine Learning Intern</h2>
                     <p>Completed a 1-month virtual internship in Machine Learning at SYNTECXHUB, working on real-world
                         projects like house price prediction, iris classification, fraud detection, and recommendation
                         systems, gaining skills in Python, data analysis, ML modeling, and problem-solving.</p>
-                    <a href="#" onclick="openModal('ml')">Learn more</a>
+                    <a href="#" onclick="event.preventDefault(); openModal('ml')">Learn more</a>
                 </div>
                 <div>
                     <h2>Python Full-Stack Intern</h2>
                     <p>Ongoing a 3-month internship in Python Full-Stack Development at Besant Technologies, working on
                         real-world projects and gaining skills in FastAPI, React, and database management.</p>
-                    <a href="#" onclick="openModal('fullstack')">Learn more</a>
+                    <a href="#" onclick="event.preventDefault(); openModal('fullstack')">Learn more</a>
                 </div>
             </div>
         </div>
@@ -219,24 +219,27 @@
         </div>
     </div>
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
+    <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
 
-            <div class="modal-body">
-                <!-- LEFT: Certificate -->
-                <div class="modal-left">
-                    <img id="modal-cert" src="" alt="Certificate">
-                </div>
+        <span class="close" onclick="closeModal()">&times;</span>
 
-                <!-- RIGHT: Details -->
-                <div class="modal-right">
-                    <h2 id="modal-title"></h2>
-                    <div id="modal-details"></div>
-                </div>
+        <div class="modal-body">
+            <!-- LEFT: Certificate -->
+            <div class="modal-left">
+                <img id="modal-cert" src="" alt="Certificate">
+            </div>
+
+            <!-- RIGHT: Details -->
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <div id="modal-details"></div>
             </div>
         </div>
+
     </div>
+</div>
 
     <script>
         let tablinks = document.getElementsByClassName("tab-links");
@@ -301,8 +304,6 @@
 
     <script>
         const themeToggle = document.getElementById("theme-toggle");
-
-        // Load saved theme
         document.addEventListener("DOMContentLoaded", () => {
             const savedTheme = localStorage.getItem("theme");
 
@@ -311,8 +312,6 @@
                 themeToggle.classList.replace("fa-sun", "fa-moon");
             }
         });
-
-        // Toggle theme
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("light-mode");
 
@@ -327,31 +326,79 @@
     </script>
     <script>
         function openModal(type) {
-            const modal = document.getElementById("modal");
-            const title = document.getElementById("modal-title");
-            const cert = document.getElementById("modal-cert");
-            const details = document.getElementById("modal-details");
+    const modal = document.getElementById("modal");
+    const title = document.getElementById("modal-title");
+    const cert = document.getElementById("modal-cert");
+    const details = document.getElementById("modal-details");
 
-            if (type === "ai-ml") {
-                title.innerText = "AI-ML Internship";
-                cert.src = "images/ai_ml_certificate.jpg";
-                details.innerHTML = `
+    if (type === "ai-ml") {
+        title.innerText = "AI-ML Internship (TANSAM - Siemens)";
+        cert.src = "images/tansam.jfif";
+
+        details.innerHTML = `
             <p><strong>What I Did:</strong></p>
             <ul>
-                <li>Built ML models for classification</li>
-                <li>Performed data preprocessing</li>
-                <li>Improved accuracy through tuning</li>
+                <li>Worked on real-world AI & ML problems</li>
+                <li>Implemented classification models</li>
+                <li>Performed data preprocessing using Pandas</li>
+                <li>Improved model performance through tuning</li>
             </ul>
-            <p><strong>Tech Stack:</strong> Python, Pandas, Scikit-learn</p>
+
+            <p><strong>Tech Stack:</strong> Python, Pandas, NumPy, Scikit-learn</p>
         `;
-            }
+    }
 
-            modal.style.display = "flex";  // ✅ IMPORTANT
-        }
+    else if (type === "ml") {
+        title.innerText = "Machine Learning Internship (Syntexhub)";
+        cert.src = "images/syntexhub.jfif";
 
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
+        details.innerHTML = `
+            <p><strong>Projects:</strong></p>
+            <ul>
+                <li>House Price Prediction</li>
+                <li>Iris Classification</li>
+                <li>Fraud Detection</li>
+                <li>Recommendation System</li>
+            </ul>
+
+            <p><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas</p>
+        `;
+    }
+
+    else if (type === "fullstack") {
+        title.innerText = "Python Full-Stack Internship (Besant Technologies)";
+        cert.src = "images/kevel_guru.jfif";
+
+        details.innerHTML = `
+            <p><strong>What I Did:</strong></p>
+            <ul>
+                <li>Developed REST APIs using FastAPI</li>
+                <li>Built frontend using React</li>
+                <li>Integrated MySQL database</li>
+                <li>Built full-stack applications</li>
+            </ul>
+
+            <p><strong>Tech Stack:</strong> FastAPI, React, MySQL</p>
+        `;
+    }
+
+    cert.onerror = () => {
+        cert.src = "images/default_certificate.jpg";
+    };
+
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
     </script>
 
 </body>
