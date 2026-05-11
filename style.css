@@ -634,10 +634,6 @@ nav .fa-xmark {
     color: #000;
 }
 
-.light-mode #header {
-    background-image: url(images/photo1.jpeg);
-}
-
 .light-mode #about,
 .light-mode #internships,
 .light-mode #project,
@@ -697,6 +693,17 @@ nav .fa-xmark {
 #theme-toggle {
     color: #fff;
     cursor: pointer;
+}
+/* Keep header text white in light mode */
+.light-mode .header-text,
+.light-mode .header-text p,
+.light-mode .header-text h1 {
+    color: #fff;
+}
+
+/* Keep highlighted name color unchanged */
+.light-mode .header-text h1 span {
+    color: #ff004f;
 }
 
 .light-mode .about-head,
